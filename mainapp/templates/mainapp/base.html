@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+        {% block title %}
+            {{ title|title }}
+        {% endblock %}
+    </title>
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'fonts/font-awesome/css/font-awesome.css' %}">
+    {% endblock %}
+
+    {% block js %}
+    {% endblock %}
+</head>
+<body>
+    <div class="menu_to_main">
+        {% block menu %}
+            <a href="{% url 'main' %}">На главную</a><br>
+
+        {% endblock %}
+    </div>
+
+    <div class="text_exercises">
+        <ol>
+            {% block content %}
+                {% for exercise in exercises %}
+                    <li>{{ exercise }}<br></li>
+                {% endfor %}
+            {% endblock %}
+        </ol>
+    </div>
+
+    {% block footer %}
+    {% endblock %}
+
+</body>
+</html>
+

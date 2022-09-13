@@ -1,0 +1,37 @@
+{% load static %}
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+        {% block title %}
+            {{ title|title }}
+        {% endblock %}
+    </title>
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'fonts/font-awesome/css/font-awesome.css' %}">
+    {% endblock %}
+
+    {% block js %}
+    {% endblock %}
+</head>
+<body>
+
+    <div class="title_text">
+        Группа мышц для тренеровки:
+    </div>
+
+    <div class="muscle_group">
+        {% block menu %}
+            <a href="{% url 'breast' %}">Грудь</a><br>
+            <a href="{% url 'back' %}">Спина</a><br>
+            <a href="{% url 'triceps' %}">Трицепс</a><br>
+            <a href="{% url 'biceps' %}">Бицепс</a><br>
+            <a href="{% url 'press' %}">Пресс</a><br>
+            <a href="{% url 'shoulders' %}">Плечи</a><br>
+            <a href="{% url 'legs' %}">Ноги</a><br>
+        {% endblock %}
+    </div>
+</body>
+</html>

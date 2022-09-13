@@ -1,0 +1,14 @@
+.title_text {
+    color: red;
+    font-size: 40px;
+}
+
+
+.text_exercises {
+    color: blue;
+    font-size: 20px;
+}
+
+.muscle_group, .menu_to_main {
+    font-size: 25px;
+}
